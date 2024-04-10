@@ -120,6 +120,10 @@ void MemoryCardSettingsWidget::createPortSettingsUi(SettingsWindow* dialog, int 
   ui->layout->addWidget(new QLabel(tr("Memory Card Type:"), ui->container));
   ui->layout->addWidget(ui->memory_card_type);
 
+  dialog->registerWidgetHelp(ui->memory_card_type, tr("Memory Card Type"),
+                             index == 0 ? tr("Separate Card Per Game (Title)") : tr("User Preference"),
+                             tr("Sets which sort of memory card image will be used for slot %1.").arg(index + 1));
+
   QHBoxLayout* memory_card_layout = new QHBoxLayout();
   ui->memory_card_path = new QLineEdit(ui->container);
   updateMemoryCardPath(index);

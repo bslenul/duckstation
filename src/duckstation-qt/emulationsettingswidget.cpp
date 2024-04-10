@@ -130,13 +130,14 @@ EmulationSettingsWidget::EmulationSettingsWidget(SettingsWindow* dialog, QWidget
     tr("Skips the presentation/display of frames that are not unique. Can be combined with driver-level frame "
        "generation to increase perceptible frame rate. Can result in worse frame pacing, and is not compatible with "
        "syncing to host refresh."));
-  dialog->registerWidgetHelp(
-    m_ui.rewindEnable, tr("Rewinding"), tr("Unchecked"),
-    tr("<b>Enable Rewinding:</b> Saves state periodically so you can rewind any mistakes while playing.<br> "
-       "<b>Rewind Save Frequency:</b> How often a rewind state will be created. Higher frequencies have greater system "
-       "requirements.<br> "
-       "<b>Rewind Buffer Size:</b> How many saves will be kept for rewinding. Higher values have greater memory "
-       "requirements."));
+  dialog->registerWidgetHelp(m_ui.rewindEnable, tr("Enable Rewinding"), tr("Unchecked"),
+                             tr("Saves state periodically so you can rewind any mistakes while playing."));
+  dialog->registerWidgetHelp(m_ui.rewindSaveFrequency, tr("Rewind Save Frequency"), tr("10,00 Seconds"),
+                             tr("How often a rewind state will be created. Higher frequencies have greater system "
+                                "requirements."));
+  dialog->registerWidgetHelp(m_ui.rewindSaveSlots, tr("Rewind Buffer Size"), tr("10 Frames"),
+                             tr("How many saves will be kept for rewinding. Higher values have greater memory "
+                                "requirements."));
   dialog->registerWidgetHelp(
     m_ui.runaheadFrames, tr("Runahead"), tr("Disabled"),
     tr(

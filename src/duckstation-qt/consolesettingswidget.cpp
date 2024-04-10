@@ -88,6 +88,8 @@ ConsoleSettingsWidget::ConsoleSettingsWidget(SettingsWindow* dialog, QWidget* pa
   dialog->registerWidgetHelp(m_ui.disableAllEnhancements, tr("Disable All Enhancements"), tr("Unchecked"),
                              tr("Disables all enhancement options, simulating the system as accurately as possible. "
                                 "Use to quickly determine whether an enhancement is responsible for game bugs."));
+  dialog->registerWidgetHelp(m_ui.enableCheats, tr("Enable Cheats"), tr("Unchecked"),
+                             tr("Automatically loads and applies cheats on game start. Cheats can break games and saves."));
   dialog->registerWidgetHelp(
     m_ui.cdromLoadImageToRAM, tr("Preload Image to RAM"), tr("Unchecked"),
     tr("Loads the game image into RAM. Useful for network paths that may become unreliable during gameplay. In some "

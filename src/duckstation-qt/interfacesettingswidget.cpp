@@ -87,15 +87,22 @@ InterfaceSettingsWidget::InterfaceSettingsWidget(SettingsWindow* dialog, QWidget
                                 "resume directly from where you left off next time."));
   dialog->registerWidgetHelp(m_ui.startFullscreen, tr("Start Fullscreen"), tr("Unchecked"),
                              tr("Automatically switches to fullscreen mode when a game is started."));
+  dialog->registerWidgetHelp(m_ui.doubleClickTogglesFullscreen, tr("Double-Click Toggles Fullscreen"), tr("Checked"),
+                             tr("Switches between full screen and windowed when the window is double-clicked."));
   dialog->registerWidgetHelp(m_ui.hideMouseCursor, tr("Hide Cursor In Fullscreen"), tr("Checked"),
                              tr("Hides the mouse pointer/cursor when the emulator is in fullscreen mode."));
   dialog->registerWidgetHelp(
     m_ui.inhibitScreensaver, tr("Inhibit Screensaver"), tr("Checked"),
     tr("Prevents the screen saver from activating and the host from sleeping while emulation is running."));
   dialog->registerWidgetHelp(
-    m_ui.renderToSeparateWindow, tr("Render To Separate Window"), tr("Checked"),
+    m_ui.renderToSeparateWindow, tr("Render To Separate Window"), tr("Unchecked"),
     tr("Renders the display of the simulated console to the main window of the application, over "
        "the game list. If checked, the display will render in a separate window."));
+  dialog->registerWidgetHelp(m_ui.hideMainWindow, tr("Hide Main Window When Running"), tr("Unchecked"),
+                             tr("Hides the main window of the application while emulation is running in a "
+                                "separate window."));
+  dialog->registerWidgetHelp(m_ui.disableWindowResizing, tr("Disable Window Resizing"), tr("Unchecked"),
+                             tr("Removes the ability to resize the application windows."));
   dialog->registerWidgetHelp(m_ui.pauseOnStart, tr("Pause On Start"), tr("Unchecked"),
                              tr("Pauses the emulator when a game is started."));
   dialog->registerWidgetHelp(m_ui.pauseOnFocusLoss, tr("Pause On Focus Loss"), tr("Unchecked"),

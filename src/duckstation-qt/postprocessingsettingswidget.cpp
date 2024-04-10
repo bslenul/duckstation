@@ -37,6 +37,9 @@ PostProcessingChainConfigWidget::PostProcessingChainConfigWidget(SettingsWindow*
 
   SettingWidgetBinder::BindWidgetToBoolSetting(sif, m_ui.enablePostProcessing, section, "Enabled", false);
 
+  dialog->registerWidgetHelp(m_ui.enablePostProcessing, tr("Enable Post Processing"), tr("Unchecked"),
+                             tr("If not enabled, the current post processing chain will be ignored."));
+
   updateList();
   updateButtonsAndConfigPane(std::nullopt);
   connectUi();
